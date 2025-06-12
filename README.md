@@ -65,7 +65,7 @@ Each component below has its own in-depth installation and configuration guide i
 - Used `sysprep` to clone image before domain setup
 
 ### 🏢 [Active Directory Domain Services (ADDS)](./docs/adds_config.md)
-- Promoted DC1 to Domain Controller (`corp.local`)
+- Promoted DC1 to Domain Controller (`tfhomelab.local`)
 - Created OUs and users (e.g., `tad.franco`)
 - Enabled centralized login for domain-joined workstations
 
