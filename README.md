@@ -50,5 +50,40 @@ The domain environment is built on an **isolated LAN** behind a **Windows Server
 
 
 ![Domain_TOPO](https://github.com/tadiusfrank2001/activedirectorycluster/blob/main/img/AD_network_topology.png)
+
+---
+
+## ⚙️ Core Components Configuration
+
+Each component below has its own in-depth installation and configuration guide in the [`/docs`](./docs/) folder.
+
+### 🖥️ [Windows Server 2022 - DC1](./docs/dc1_install.md)
+- Installed via UTM with two network adapters
+- Renamed network adapters to `PUBLIC` and `PRIVATE`
+- Set static IPs for both interfaces
+- Assigned DC1 the role of router and DNS/DHCP provider
+- Used `sysprep` to clone image before domain setup
+
+### 🏢 [Active Directory Domain Services (ADDS)](./docs/adds_config.md)
+- Promoted DC1 to Domain Controller (`corp.local`)
+- Created OUs and users (e.g., `tad.franco`)
+- Enabled centralized login for domain-joined workstations
+
+### 🌐 [Remote Access Services (Routing and NAT)](./docs/ras_config.md)
+- Installed Routing and Remote Access (RRAS)
+- Configured NAT on `PUBLIC` adapter
+- Created static route for internal LAN: `192.168.64.0/24`
+
+### 📦 [DHCP Server](./docs/dhcp_config.md)
+- Created custom DHCP scope: `192.168.64.10–20`
+- Set gateway as `192.168.64.100` (DC1)
+- DNS servers: `127.0.0.1`, `8.8.8.8` (fallback)
+
+### 🧍 [Windows 10 Pro Workstation(s)](./docs/workstation_join.md)
+- Installed with UTM using Pro edition (not Home)
+- Joined to domain using domain admin credentials
+- Verified DHCP lease and internet access via NAT
+- Successfully logged in with AD user (e.g., `tad.franco@corp.local`)
+
 ---
 
