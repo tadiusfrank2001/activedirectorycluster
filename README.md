@@ -17,6 +17,18 @@ Welcome to the **Active Directory Cluster**, a hands-on project designed to simu
 
 ---
 
+## 🧠 Skills Demonstrated
+
+- Windows Server 2022 Installation & Configuration
+- Multi-NIC Networking in UTM
+- Active Directory Domain Services setup
+- DHCP Server configuration with custom IP scopes
+- Remote Access (Routing and NAT) for internet gateway
+- Domain Join and User Authentication on Workstations
+- Basic PowerShell and Windows CLI Networking Tools
+
+---
+
 ## 🧩 Core Components
 
 | Component     | Role                                                       |
@@ -26,3 +38,17 @@ Welcome to the **Active Directory Cluster**, a hands-on project designed to simu
 | **Network**    | UTM-based dual-NIC system with NAT and internal LAN         |
 
 ---
+
+## 🖥️ Network Design
+
+The domain environment is built on an **isolated LAN** behind a **Windows Server 2022 router**. This allows the internal subnet to access the internet through NAT while maintaining domain-level management and IP assignment.
+
+| NIC Name | UTM Network | IP Address        | Purpose                      |
+|----------|-------------|-------------------|-------------------------------|
+| `PUBLIC` | Shared NAT  | 10.0.2.x (static) | Internet access via host NAT |
+| `PRIVATE`| Emulated LAN| 192.168.64.100    | Internal LAN, DHCP, ADDS     |
+
+
+![Domain_TOPO](https://github.com/tadiusfrank2001/activedirectorycluster/blob/main/img/AD_network_topology.png)
+---
+
