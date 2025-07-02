@@ -86,4 +86,29 @@ Each component below has its own in-depth installation and configuration guide i
 - Successfully logged in with AD user (e.g., `tad.franco@corp.local`)
 
 ---
+## 🔍 Reflections
 
+### What This Teaches About Self-Hosting
+
+This lab provides hands-on experience in building and managing a mini-enterprise network fully hosted by you, without relying on external cloud services. Key lessons include:
+
+- **Control Over Infrastructure**  
+  Setting up and managing Active Directory, DNS, DHCP, and NAT routing services gives you full control of your network environment, similar to how organizations self-manage their internal IT.
+
+- **Private Networking and Isolation**  
+  Using dual network interfaces and virtualized environments to create segmented public and private networks demonstrates how to isolate services and devices, a critical concept in self-hosting.
+
+- **Hosting Core Identity Services**  
+  Installing Active Directory Domain Services (ADDS) teaches how to centralize user authentication and access management on your own hardware (**IAM**).
+
+- **DHCP and DNS Configuration**  
+  Running your own DHCP and DNS servers shows how to dynamically assign IP addresses and resolve domain names internally, independent of ISPs or cloud providers.
+
+- **Routing and NAT Setup**  
+  Configuring Remote Access Services (RAS) with NAT highlights how to securely route traffic between private networks and the internet, an essential skill in self-hosted labs and production environments.
+
+- **Domain Workstation Integration**  
+  Joining workstations to your domain illustrates centralized management of users and devices, improving security and administration.
+
+- **Efficient Lab Replication**  
+  Using Sysprep to clone server images teaches how to efficiently replicate and scale your lab infrastructure.
